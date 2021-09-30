@@ -1,0 +1,84 @@
+/*
+  기본 구조
+
+  selector {
+    key: value;
+  }
+*/
+h1 {
+  color: red;
+}
+
+p, li {
+  color: green;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* class selector */
+.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/* special class를 가진 li element를 대상으로 함 */
+li.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/* special class를 가진 모든 li element 및 special class를 가진 모든 span element를 대상으로 함 */
+li.special,
+span.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/*
+  descendant combinator
+
+  li element 내에 중첩된 em element만 선택함
+*/
+li em {
+  color: rebeccapurple;
+}
+
+/*
+  adjacent sibling combinator
+
+  동일한 계층 구조 수준에서 제목 바로 다음에 오는 단락의 스타일을 지정
+*/
+h1 + p {
+  font-size: 200%;
+}
+
+/* 상태에 따른 스타일링 */
+a:link {
+  color: pink;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* selector와 combinator를 결합 */
+/* article 내부에 있는 p 안에 있는 모든 span 선택 */
+article p span {
+  color: yellow;
+}
+
+/* h1 바로 뒤에 오는 ul 바로 뒤의 모든 p 선택 */
+h1 + ul + p {
+  color: rosybrown;
+}
+
+/* body 안에 있는 h1 바로 뒤에 오는 p 안에 있는 special class를 가진 element */
+body h1 + p .special {
+  font-size: 20px;
+}

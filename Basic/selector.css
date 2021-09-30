@@ -1,0 +1,43 @@
+/* type selector */
+h1 { }
+
+/* class selector */
+.box { }
+
+/* id selector */
+#unique { }
+
+/* element와 id가 모두 일치 */
+h1#unique { }
+
+/* attribute selector */
+/* a에 title attribute 가 있으면 */
+a[title] { }
+
+/* a에 href attribute가 있고 그 값이 https://example.com 이라면 */
+a[href="https://example.com"] { }
+
+/* psuedo-classes (특정 상태를 스타일링) */
+/* a element에 마우스가 오버된 경우 */
+a:hover { }
+
+/* psuedo-elements 특정 컨텐츠를 선택 */
+/* p의 첫번째 라인인 경우 */
+p::first-line { }
+
+/* combinators */
+/* article의 자식 p를 선택 */
+article > p { }
+
+/* universal selector */
+/* 문서의 모든 항목 선택 */
+* { }
+
+/* article 직계 자식을 포함하고 부모의 첫 번째 자식인 요소의 자손 element를 포함 */
+/* article:first-child 와 혼동 될 수 있음 */
+article :first-child { }
+
+/* 유니버설 셀렉터로 좀 더 명확하게 */
+article *:first-child {} 
+
+TODO : https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors
