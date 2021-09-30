@@ -40,4 +40,27 @@ article :first-child { }
 /* 유니버설 셀렉터로 좀 더 명확하게 */
 article *:first-child {} 
 
-TODO : https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors
+/* attribute selector */
+/*
+  Presence and value selectors
+
+  element[attr] -> a[title] : <a title="any string"> attribute가 일치하는
+  element[attr=value] -> a[href="https://exmaple.com"] -> <a href="https://exmaple.com"> value가 정확히 일치하는
+  element[attr~=value] -> p[class~="special"] -> <p class="special other"> or <p class="special"> 일치하거나 공백으로 구분되는 리스트중 일치하는
+  element[attr|=value] -> div<lang|="zh"] -> <div lang="zh"> or <div lang="zh-US"> zh로 시작하거나 zh-로 시작하는
+*/
+
+/*
+  Substring matching selectors
+
+  element[attr^=value] -> li[class^="box-"] -> <li class="box-warning"> box- 로 시작하는
+  element[attr&=value] -> li[class&="-box"] -> <li class="super-box">  -box 로 끝나는 
+  element[attr*=value] -> li[class*="box"] -> <li class="wow-box-wow"> box 문자열이 포함되는
+*/
+
+/*
+  i 를 붙이면 대소문자를 구분하지 않음
+  li[class^="box-" i] { } 
+  <li class="BOX-"> OK
+  <li class="bOx-"> OK 
+*/
