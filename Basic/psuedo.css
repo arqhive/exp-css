@@ -1,0 +1,187 @@
+/*
+  pseudo-class
+
+  특정 상태에 있는 element를 선택하는 selector
+  예제가 특정 element 에서만 사용가능한 것 아님
+*/
+
+/* 사용자가 element를 활성화 (예: 클릭) 할 때 */
+a:active {
+  color: red;
+}
+
+/* 링크의 :link :visited 상태를 일치시킨다. */
+a:any-link {
+  color: blue;
+}
+
+/* input의 값이 비어있을때 */
+input:blank {
+  border-width: 1px;
+}
+
+/* 라디오 버튼이나 체크박스가 선택된 상태일때 */
+input[type="radio"]:checked { }
+
+/* element 또는 조상 element가 현재 표시되고 있을때 */
+p:current {}
+
+/* 유사한 element 집합 중 기본값이 하나 이상의 UI element와 일치할때 (예 : 체크박스 라디오의 option중에 checked attribute를 가지고 있을때) */
+div:default { }
+
+/* HTML dir attribute나 css direction 값에 따라 설정됨 */
+p:dir { }
+
+/* 비활성화된 element */
+button:disabled { }
+
+/* 자식이 없는 element */
+img:empty { }
+
+/* 활성화된 element */
+input:enabled { }
+
+/* 인쇄된 문서의 첫 페이지 (인쇄할때) */
+@page :first { }
+
+/* 형제 중 첫 번째 element */
+p:first-child { }
+
+/* 형제 중 타입별 첫번째 element (처음으로 등장한 element 가 선택됨) */
+article:first-of-type { }
+
+/* 포커스 */
+input:focus { }
+
+/* focus-visible 잘 모르겠음 */
+input:focus-visible { }
+
+/* 포커스가 있는 element와 포커스가 있는 element를 포함하는 element (예: 포커스된 input을 가지고 있는 form) */
+form:focus-within { }
+
+/* 자막에 사용하는 것 같음 element 선택 없음 */
+:future(p, span) { }
+/* 자매품 :past */
+
+/* element 위로 마우스를 가져갈때 */
+a:hover { }
+
+/* 값이 불확실한 element (예: checkbox, radio, progress) */
+input:indeterminate + label {
+  background: lime;
+}
+
+/* 값이 범위 내에 있을때 (예: input type="number" 에서 min max value 가 설정되어 있는 경우) */
+input:in-range {
+  background-color: rgba(0, 255, 0, 0.25);
+}
+/* 자매품 out-of-range */
+
+/* 값이 유효성을 통과하지 못했을때 (예: input type="email") */
+input:invalid { }
+/* 자매품 :valid */
+
+/* html lang attribute 에 따라 */
+p:lang(ko) { }
+
+/* 형제중 마지막 element */
+p:last-child { }
+
+/* first-type-of 반대 */
+article :last-of-type { }
+
+/* 인쇄시 왼쪽 페이지 */
+@page :left {
+  margin: 2in 3in;
+}
+/* 자매품 :right */
+
+/* 방문하지 않은 링크 */
+a:link { }
+
+/* 현재 문서와 동일한 사이트에 있는 페이지를 가르키는 링크 */
+a:local-link { }
+
+/* 파라미터 에서 찾고 적용 */
+/* header, main, footer 내의 마우스 오버된 p */
+:is(header, main, hover) p:hover { }
+/* pseudo 지원 */
+:is(:last-child, :left) { }
+
+/* 파라미터는 제외 */
+/* 복수 파라미터는 실험적 */
+:not(p) {
+  color: blue;
+}
+
+/* an+b 의 파라미터를 받아 선택 */
+a:nth-child(2) { }
+a:nth-child(2n + 1) { }
+a:nth-child(4n) { }
+/* 자매품: nth-of-type, nth-last-child, nth-last-of-type */
+
+/* 형제가 없는 element. 즉 자식 element중 한개만 사용된 element */
+p:only-child { }
+
+/* 양식의 옵셔널한 input, select, textarea (not required인 녀석들) */
+input:optional {
+  border: 1px dashed black;
+}
+/* 자매품 :required */ 
+
+/* placeholder 선택 */
+ionput:placeholder-shown { }
+
+/* audio, video에 사용됨 */
+:playing { }
+:paused { }
+
+/* 사용자가 편집할수 없는 element 선택 (not contenteditble) */
+input:read-only { }
+
+/* 사용자가 편집할수 있는 element 선택 (contenteditble attribute가 있어도 선택됨) */
+p:read-write { }
+
+/* 방문한 링크 */
+a:visited { }
+
+/* html element를 의미함 */
+:root { }
+/* :scope 와 동일함. 현재는 :root 를 사용할 것*/
+
+/* 현재 URL이 page fragment(#) 과 동일할때 */
+:target { }
+/* 예) http://exmaple.com/index.html#section2 */
+/* 선택됨) <section id="section2"> */
+
+/*
+  pseudo-element
+
+  마크업을 추가한것처럼 동작함
+*/
+
+/* ::after, ::before는 텍스트 컨텐츠앞에 추가하므로 content 내용도 당연히 텍스트임 */
+/* 컨텐츠 맨 마지막에 의사 element를 추가함 */
+a::after {
+  content: "->";
+  color: green;
+}
+
+/* 컨텐츠 맨 앞에 의사 element를 추가함 */
+a::before {
+  content: "Go!"
+}
+
+/* 블록 레벨 element의 첫 글자 */
+p::first-letter { 
+  font-weight: bold;
+}
+
+/* 블록 레벨 element의 첫 라인 */
+p::first-line { }
+
+/* 마커 선택 (예: li 앞에 붙는 동그라미 같은 기호) */
+ul li::marker { }
+
+/* 마우스로 드래그해서 블락 효과가 나타났을때 */
+p::selection { }
