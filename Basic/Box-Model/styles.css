@@ -1,0 +1,53 @@
+/* 아래는 표준 Box Model (브라우저 기본)*/
+/* padding과 border 만큼 박스 사이즈가 커짐 */
+/* margin은 상자 크기의 포함되지 않음 */
+/* 410px 너비의 상자를 만들기 위해 padding과 border까지 계산해야 하는건 별로 좋지 않음 */
+.box {
+  width: 350px;
+  height: 150px;
+  background-color: red;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+/* Alternative Box Model */
+/* 지정한 width값이 실제 브라우저 width 값과 동일해짐 */
+.alternative-box {
+  box-sizing: border-box;
+  width: 350px;
+  height: 150px;
+  background-color: red;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+/* 그래서 보통 이런 트릭을 사용함 */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* inline box */
+span {
+  margin: 20px; /* Horizontal margin은 적용된다. Vertical margin은 무시된다. */
+  padding: 20px; /* Horizontal padding은 적용된다. Vertical padding은 무시된다 */
+  width: 80px; /* 무시된다 */
+  height: 50px; /* 무시된다 */
+  border: 2px solid blue; /* vertical 속성 및 높이 너비가 무시되기 때문에 border가 다른 element의 영역을 침범함 */
+}
+
+/* 이런 문제를 해결하기 위해 display: inline-block 을 사용한다. */
+/* element는 inline으로 배치되지만 block에 적용되는 속성을 적용받는다. */
+.inline-block {
+  margin: 20px; 
+  padding: 20px; 
+  width: 80px; 
+  height: 100px; 
+  border: 2px solid blue; 
+  display: inline-block;
+}

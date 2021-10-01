@@ -1,0 +1,103 @@
+/* background-color 는 모든 element에 적용 가능하다. */
+.background {
+  width: 50px;
+  height: 50px;
+  background-color: #567895;
+}
+
+.a {
+  width: 200px;
+  height: 100px;
+  background-image: url(star.png);
+  background-color: white;
+  background-repeat: no-repeat; /*  repeat(default), no-repeat, repeat-x, repeat-y */
+  background-size: 200px 100px; /* (width, height) 쌍, cover, contain */
+  background-position: 10px 10%; /* (x, y) 쌍, top, left, right, bottom, center */
+}
+
+.contain {
+  width: 200px;
+  height: 100px;
+  background-image: url(star.png);
+  background-color: white;
+  background-repeat: no-repeat; /*  repeat(default), no-repeat, repeat-x, repeat-y */
+  background-size: contain; /* 가로 세로 비율을 유지 하면서 상자 영역을 덮을 만큼 이미지를 크게 만든다. */
+  background-position: center center;
+  background-position-x:  center; /* 풀어 쓸수 있다 */
+  background-position-y: center;
+}
+
+.cover {
+  width: 200px;
+  height: 100px;
+  background-image: url(star.png);
+  background-color: white;
+  background-repeat: no-repeat; /*  repeat(default), no-repeat, repeat-x, repeat-y */
+  background-size: cover; /* 상자 안에 맞는 크기로 만든다. 비율이 다르면 이미지가 제대로 표시 안될수 있음 */
+  background-position: top 20px right 10px; /* 위에서 20px 오른쪽에서 10px */
+}
+
+/* 선형 그래디언트 */
+.gradient {
+  width: 200px;
+  height: 100px;
+  background-image: linear-gradient(105deg, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%);
+}
+
+/* 원형 그래디언트 */
+.gradient2 {
+  width: 200px;
+  height: 100px;
+  background-image: radial-gradient(circle, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%);
+  background-size: 100px 50px;
+}
+
+/* 여러 배경 이미지 */
+.multi-bg {
+  width: 200px;
+  height: 100px;
+  background-image: url(star.png), linear-gradient(105deg, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%); /* 뒤에 나오는 이미지가 더 뒤에 있음*/
+  background-repeat: no-repeat; /* image의 개수와 차이가 나면 더 적은 수의 값이 순환한다. */
+  background-position: 10px 20px; /* image의 값 개수와 차이나면 순서대로 순환한다 */
+}
+
+/* 속기 */
+/* url(or gradient) size / position repeat, color */
+/* color는 반드시 , 뒤에 */
+.shorthand {
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(105deg, rgba(255, 2555, 255, .2) 39%, rgba(51, 56, 57, 1) 96%) center center / 400px 200px no-repeat,
+              url(star.png) center no-repeat, red;
+}
+
+.shorthand-border {
+  width: 200px;
+  height: 100px;
+  border: 10px solid red;
+  background-color: white;
+}
+
+.full-border {
+  border-top: 10px solid red;
+  border-left: 5px solid blue;
+
+  border-width: 4px;
+  border-style: solid;
+  border-color: blue;
+
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-top-color: red;
+}
+
+.radius {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  border: 4px solid yellow;
+
+  border-top-right-radius: 20px;
+  border-top-left-radius: 1em 10%; /* 수평 반경 1em 수직 반경 10% */
+}

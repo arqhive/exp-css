@@ -1,0 +1,46 @@
+.overflow {
+  border: 1px solid #333333;
+  width: 100px;
+  font-size: 250%;
+  background-color: red;
+  font-size: 250%;
+  overflow: visible; /* 기본값은 visible 이다 */
+}
+
+/* overflow 영역을 숨김 */
+.overflow-hidden {
+  border: 1px solid #333333;
+  width: 100px;
+  font-size: 250%;
+  background-color: red;
+  font-size: 250%;
+  overflow: hidden; 
+}
+
+/* overflow 만큼 스크롤이 생김 */
+.overflow-scroll {
+  border: 1px solid #333333;
+  width: 100px;
+  font-size: 250%;
+  background-color: red;
+  font-size: 250%;
+  overflow: scroll; 
+}
+
+.overflow-xy {
+  border: 1px solid #333333;
+  width: 100px;
+  font-size: 250%;
+  background-color: red;
+  font-size: 250%;
+  overflow: scroll hidden; /* x, y */
+  overflow-x: scroll;
+  overflow-y: hidden;  
+}
+
+.overflow-auto {
+  border: 1px solid #333333;
+  width: 200px;
+  height: 100px;
+  overflow: auto; /* 브라우저가 스크롤을 표시해야 하는지 결정함 */
+}
