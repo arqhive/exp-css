@@ -1,0 +1,58 @@
+/*
+  Descendant combinator
+
+  단일 공간 문자
+*/
+
+/* body의 자식중 article의 자식중 p */
+body article p { }
+
+/* class가 box인 element 의 자식중 p */
+.box p { }
+
+
+/*
+  Child combinator
+
+  직계 자식만 선택한다.
+*/
+
+/* article 내 가장 먼저 나오는 자식 p 만 선택됨 */
+article > p { }
+
+/* 처음 li만 선택됨 */
+ul > li { }
+
+/*
+  Adjacent sibling combinator
+
+  인접한 형제 element 선택  
+*/
+
+/* h1과 동일 레벨에 있는 가장 인접한 p 선택 */
+h1 + p { }
+
+/*
+  <article>
+    <h1>바로 아래 p가 선택됨</h1>
+    <p>내가 선택된다!</p>
+    <p>난 선택안됨</p>
+  </article>
+*/
+
+
+/*
+  General sibling combinator
+
+  인접한 모든 형제 선택
+*/
+
+h1 ~ p { }
+
+/*
+  <article>
+    <h1>바로 아래 p가 선택됨</h1>
+    <p>내가 선택된다!</p>
+    <p>나도 선택된다~</p>
+  </article>
+*/
