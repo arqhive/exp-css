@@ -1,5 +1,7 @@
 # CSS Concept
 
+**규칙의 일관성을 위한 normalize.css 와 같은것을 권장**
+
 1. 외부 스타일 시트를 가장 선호할 것
 2. 진짜 지구가 멸망하기 직전이 아니면 인라인 스타일을 작성하지 말 것 https://developer.mozilla.org/ko/docs/Learn/CSS/First_steps/How_CSS_is_structured
 
@@ -73,3 +75,50 @@ inline > id selector > class selector, pseudo-class > element selector
 !important는 계단식이 정상적으로 작동하는 방식을 변경하므로 반드시 필요한 경우가 아니면 절대로 사용하지 말자
 
 id selector
+
+## 절대 단위 (px 외에는 이런게 있다 정도만 알자)
+- cm : 센티미터
+- mm : 밀리미터
+- Q : 쿼터 밀리미터
+- in : 인치
+- pc : 피카
+- pt : 포인트
+- px : 픽셀
+
+## 상대 단위 (상위 element의 폰트 사이즈 또는 뷰포트 크기에 상대적)
+- em : 부모의 font-size 크기 (폰트에만 사용할 수 있는거 아님)
+- ex : 글꼴의 x 높이
+- ch
+- rem : root element 의 폰트 사이즈
+- lh : element line height
+- vw : 뷰포트 너비의 1%
+- vh : 뷰포트 높이의 1%
+- vmin : 뷰포트의 작은 치수의 1%
+- vmax : 뷰포트의 큰 치수의 1%
+
+```
+html {
+  font-size: 16px;
+}
+
+ul {
+  font-size: 14px;
+}
+
+ul li {
+  font-size: 1.3em; /* 14 * 1.3 */
+}
+
+ul li p {
+  font-size: 1.3rem; /* 16 * 1.3 */
+}
+```
+
+## Percentage
+
+상위 element의 %로 작동
+
+## Color
+
+hex, rgb, rgba, hsl, hsla
+
