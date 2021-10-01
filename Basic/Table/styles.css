@@ -1,0 +1,95 @@
+/* 테이블 스타일링 팁 */
+/*
+  1. 마크업을 가능한한 단순하게 하고 백분율을 사용하여 유연하게 하자.
+  2. 예측 가능한 테이블 만들기 table-layout: fixed;
+  3. border-collpase: collapse;
+  4. thead, tbody, tfoot 을 사용하여 테이블을 논리적 청크로 나누고 논리적으로 CSS를 작성할 것
+  5. 얼룩말 줄무늬는 왠만하면 좋다.
+  6. text-align 을 적극적으로 사용할 것
+*/
+
+
+table {
+  table-layout: fixed; /* 고정 테이블 레이아웃을 위해 */
+  width: 100%;
+  border-collapse: collapse; /* 표준 테이블 스타일링 (border 간 간격 제거) */
+  border: 3px solid purple;
+}
+
+/* 고정 테이블 레이아웃을 위해 th:nth-child 를 사용 */
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+/* typograph */
+html {
+  font-family: 'helvetica neue', helvetica, Arial, Helvetica, sans-serif;
+}
+
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+/* Graphics and colors */
+thead, tfoot {
+  background: url(star.png);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+thead th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, tba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  border: 3px solid purple;
+}
+
+/* 얼룩말 줄무늬 */
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+/* caption */
+caption {
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom; /* 캡션이 테이블 밑에 나타남 */
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}

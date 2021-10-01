@@ -1,0 +1,43 @@
+/* 가장 중요 : 일관성 유지 */
+
+
+/* 논리적 섹션 구현하기 */
+/* || 를 통해 섹션임을 표시 */
+/* 일반적으로 body, p, h1 ~ , ul, ol, table 및 table element, a 는 공통 규칙을 설정한다. */
+/* || GENERAL STYLES */
+
+body { }
+h1, h2, h3, h4 { }
+ul { }
+blockquote { }
+
+/* 믹스인과 유사한 */
+/* || UTILITIES */
+
+.nobullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*전체 레이아웃*/ 
+/* || SITEWIDE */
+
+.main-nav { }
+.logo { }
+
+/* 페이지 구성 */
+/* || STORE PAGES */
+.product-listing { }
+.product-box {  }
+
+
+/* 지나치게 구체적인 selector 피하기 */
+atricle.main p.box { /* 다른 곳에 동일한 규칙을 적용하려면 이 코드를 복사해야 함 (자기생산의 시작) */
+  border: 1px solid #ccc; 
+}
+
+.box {
+  /* 더 좋죠 ? */
+  border: 1px solid #ccc;
+}

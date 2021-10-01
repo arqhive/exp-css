@@ -1,0 +1,105 @@
+/* 구조와 스킨 분리 */
+.button { }
+.box { }
+.widget { }
+
+
+/* 공통스킨 */
+.skin {
+  background-color: red;
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+
+/* 무슨 말이냐면 */
+.header {
+   position:relative;
+   margin:0 auto;
+   width:980px;
+   height:260px;
+   padding:20px;
+   overflow:hidden;
+}
+
+/* 공통 부분을 별도의 스타일로 지정 */
+.globalwidth {
+   position:relative;
+   padding-left:20px;
+   padding-right:20px;
+   margin:0 auto;
+   width:980px;
+   overflow:hidden;
+}
+
+/* 공통 부분을 제외한 header specific */
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 260px;
+}
+
+/* <div class="header globalwidth"> */
+
+/* class명을 semantic 하게 하기 위해 보통 이런것을 작성하는데 */
+.twitterbtn {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+  background:red;
+}
+
+.facebookbtn {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+  background:gray;
+}
+
+/* OOCSS를 적용하면 */
+.btnbase {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}
+.twitter {
+  background:red;
+}
+.facebook {
+  background:gray;
+}
+/* 단 semantic했던 class명이 파괴됨 */
+
+/* scss와 결합해서 semantic 하게 해보자 */
+/* 믹스인은 중복 코드가 생기므로 extend 권장 */
+@mixin btnbase {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}
+.twitterbtn {
+  @include btnbase;
+  background:red;
+}
+.facebookbtn {
+  @include btnbase;
+  background:gray;
+}
+
+/* 또는 extend를 활용 */
+.btnbase{
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}
+.twitterbtn {
+  @extend .btnbase;
+  background:red;
+}
+.facebookbtn {
+  @extend .btnbase;
+  background:gray;
+}

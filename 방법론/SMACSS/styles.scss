@@ -1,0 +1,38 @@
+/* Base */
+* { }
+h1,
+h2,
+h3 {
+  
+}
+
+/* Layout */
+/* 클래스명 앞에 l- 를 붙임 */
+.l-box {
+  width: 200px;
+  height: 100px;
+}
+
+/* Module */
+/* id 및 element selector 사용하지 않음 */
+/* element 써야한다면 child selector 시에만 .box > span */
+.forder { }
+.box { }
+.basket { }
+
+/* State */
+/* 상태를 나타내는 스타일 is- s- 붙여서 사용 */
+.btn { }
+.btn.is-active { }
+.btn.is-hidden { }
+
+/* Theme */
+/* 사이트 전반적 look and feel */
+/* 적용범위가 넓으면 theme- suffix 사용 */
+.mod {
+  border: 1px solid blue;
+}
+
+.theme-section {
+  background-color: red;
+}
