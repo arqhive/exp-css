@@ -1,0 +1,61 @@
+p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/*
+  기본 링크 스타일
+  1. 링크에 밑줄이 그어져 있음
+  2. 방문하지 않으면 파란색임
+  3. 방문하면 보라색임
+  4. 가리키면 손가락 모양으로 바뀜
+  5. 포커스 되면 주변에 윤곽선이 있음
+  6. 활성 링크는 빨간색
+*/
+
+/*
+  링크 스타일링 주의 사항
+  1. 링크에만 밑줄을 사용하는 것이 좋다.
+  2. 기본 스타일에서 너무 멀어지지 않게 하는것이 좋다.
+*/
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+ /* 방문전 상태 */
+ color: #265301;
+}
+
+a:visited {
+  /* 이미 방문한 링크 (브라우저 히스토리에 있음) */
+  color: #437a16;
+}
+
+a:focus {
+  /* 포커스가 맞추어져 있을때 */
+  border-bottom: 1px solid;
+  background: #bae498;
+}
+
+a:hover {
+  /* 마우스 오버시 */
+  border-bottom: 1px solid;
+  background: #cdfeaa;
+}
+
+a:active {
+  /* 마우스 클릭시 (떄기 전) */
+  background: #265301;
+  color: #cdfeaa;
+}
+
+/* 링크에 아이콘 넣기 */
+a[href*="#"] {
+  background: url('external-link-52.png') no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
