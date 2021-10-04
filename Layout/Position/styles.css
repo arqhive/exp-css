@@ -1,0 +1,23 @@
+.positioned {
+  position: static; /* 기본값. 특별한 것은 없다. */
+}
+
+.relative {
+  position: relative; /* 상대 위치 */
+  top: 30px; /* 위치 이동 */
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+}
+
+.absolute {
+  position: absolute; /* 절대 위치 */ /* 마진의 영향을 받는다. */
+}
+
+.fixed {
+  position: fixed; /* 뷰포트에 고정시킴 */
+}
+
+.sticky {
+  position: sticky; /* 특정 임계갑ㅅ*/
+}

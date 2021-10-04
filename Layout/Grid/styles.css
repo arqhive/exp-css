@@ -1,0 +1,20 @@
+.container {
+  display: grid; /* 열 하나짜리 그리드가 생긴다. */
+  /* grid-template-columns 또는 grid-template-rows 를 사용하여 생성하는 그리드를 명시적 그리드라고 한다. */
+  grid-template-columns: 200px 200px 200px; /* 3개의 열을 생성한다. 백분율도 사용 가능 */
+  grid-template-columns: 2fr 1fr 1fr; /* fr 단위를 사용하여 유연하게 지정하기 */
+  grid-template-columns: repeat(3, 1fr); /* repeat 함수를 이용해서도 나타낼수 있다. */
+  /* column-gap: 20px; 열 갭 지정 */
+  /* row-gap: 20px; 행 갭 지정 */
+  /* gap은 fr 단위는 안됨 */
+  gap: 20px; /* grid-gap 이였는데 여러 레이아웃에서 사용하도록 gap 으로 변경 */
+
+  /* 암시적이였던 행값에 높이를 지정한다. */
+  grid-auto-rows: 100px;
+
+  /* 오버플로우를 방지하기위해 minmax() 를 이용 */
+  grid-auto-rows: minmax(100px, auto); /* 최소 100px에 콘텐츠에 맞게 높이가 증가한다. */
+
+  /* 화면에 나타날수 있을 만큼 */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}

@@ -1,0 +1,65 @@
+
+/*
+  통사론
+
+  @media media-type and (media-feature-rule) { }
+
+  media-type : all, print, screen, speech
+*/
+
+/* 뷰포트가 정확히 600px 인경우 */
+@media screen and (width: 600px) {
+  body {
+    color: red;
+  }
+}
+
+/* 뷰포트가 400px 보다 아래인경우 */
+@media screen and (max-width: 400px) {
+    body {
+      color: blue;
+    }
+}
+
+/* 방향 */
+@media (orientation: landscape) {
+  body {
+    color: rebeccapurple;
+  }
+}
+
+/* 포인팅 장치 */
+@media (hover: hover) {
+  body {
+    color: rebeccapurple;
+  }
+}
+
+/* 논리곱 */
+/* 둘다 적용 될 때 */
+@media screen and (min-width: 400px) and (orientation:landscape) {
+  body {
+    color: blue;
+  }
+}
+
+/* 논리합 */
+/* or */
+@media screen and (min-width: 400px), screen and (orientation: landscape) {
+  body {
+    color: blue;
+  }
+}
+
+/* 부정 */
+/* 방향이 세로일때 적용됨 */
+@media not all and (orientation: landscape) {
+  body {
+    color: blue;
+  }
+}
+
+/*
+  미디어 쿼리를 쓰기전에 grid, flex 등으로 먼저 레이아웃을 설정하는것이 좋음
+  모바일 우선 화면으로 개발하는것이 유연하게 개발할수 있음 (큰 -> 작 보다 작 -> 큰 이 쉬움)
+*/

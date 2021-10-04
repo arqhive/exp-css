@@ -1,0 +1,44 @@
+/* Flexbox 지정 */
+section { /* seciont is flex container */
+  display: flex; /* 각 자식들은 block element 처럼 작동하지만 플렉스 항목으로 배치됨, inline element처럼 작동하게 하고싶으면 inline-flex */
+  flex-direction: row; /* 기본값은 row 주축을 변경한다. (row, column, row-reverse, column-reverse */
+  flex-wrap: wrap; /* 너비나 높이를 초과하면 오버플로우가 다음 줄로 이동한다 */
+  /* flex-direction, flex-wrap shorthand */
+  flex-flow: row wrap;
+}
+
+article {
+  flex: 200px; /* 각 flex item은 200px 너비를 차지한다. */
+  flex: 1; /* 각 flex item은 주축대비 1의 상대 공간을 가진다. */
+  flex: 1 200px /* 최소 200px은 가진다. */
+}
+
+article:nth-of-type(3) {
+  flex: 2 200px;
+}
+
+/*
+  (longhand를 추천하지 않음)
+  flex 속성은 shorthand 이며 longhand로 작성하면..
+  예 flex: 1 200px;
+  flex-grow: 1; -> 단위 없는 비율값
+  flex-shirink ->  flex item이 flex container를 넘칠 때 작동. 오버플로우를 방지하기 위해 항목이 축소되는 정도 (고급)
+  flex-basis: 200px; -> 최소 크기 값
+*/
+
+div {
+  display: flex;
+  align-items: center; /* cross axis 에서의 위치 */
+  justify-content: space-around; /* main axis 에서의 위치 */
+}
+
+/*
+  order: 기본적으로 모든 flex item의 order값은 0 이다.
+  order값이 더 높으면 낮은 값보다 나중에 나타난다.
+  동일한 값이면 HTML 순서상으로 나타난다.
+  음수 값도 된다.
+*/
+button:first-child {
+  /* align-self: flex-end; 개별 align-items 적용 */
+  order: 1;
+}
